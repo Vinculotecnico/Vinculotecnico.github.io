@@ -52,48 +52,93 @@
     </section>
 
     <section class="section">
-      <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--vt-space-6);">
+      <div class="container">
         
-        <!-- Servicio 1 -->
-        <div class="animate-on-scroll fade-in-up delay-100" style="background: var(--vt-surface-card); padding: var(--vt-space-4); border-radius: var(--vt-radius-lg); box-shadow: var(--vt-shadow-md); display: flex; flex-direction: column;">
-          <div style="color: var(--vt-primary); margin-bottom: var(--vt-space-2);">
-            <i data-lucide="activity" style="width: 32px; height: 32px;"></i>
+        <!-- Servicio 1: Diagnóstico -->
+        <div class="animate-on-scroll fade-in-up" style="background: var(--vt-surface-card); padding: var(--vt-space-6); border-radius: var(--vt-radius-lg); box-shadow: var(--vt-shadow-lg); display: flex; flex-direction: column; gap: var(--vt-space-4); margin-bottom: var(--vt-space-6);">
+          <div style="display: flex; align-items: center; gap: var(--vt-space-3); border-bottom: 1px solid var(--vt-border); padding-bottom: var(--vt-space-3);">
+            <div style="background: rgba(0, 82, 163, 0.1); padding: 16px; border-radius: 50%; color: var(--vt-primary);">
+              <i data-lucide="activity" style="width: 40px; height: 40px;"></i>
+            </div>
+            <div>
+              <h2 style="color: var(--vt-primary); margin-bottom: 0;">Diagnóstico Integral Operativo</h2>
+              <p style="color: var(--vt-secondary); margin-bottom: 0; font-weight: 500;">Evaluación de 2 a 4 semanas para identificar fugas de capital.</p>
+            </div>
           </div>
-          <h3 style="color: var(--vt-primary);">Diagnóstico de Procesos</h3>
-          <p style="flex-grow: 1;">Evaluamos el estado actual de tus operaciones y estrategias de mantenimiento. Identificamos brechas de confiabilidad, cuellos de botella y oportunidades inmediatas de optimización basándonos en estándares internacionales.</p>
-          <ul style="list-style-type: disc; padding-left: 20px; color: var(--vt-secondary); margin-bottom: var(--vt-space-3);">
-            <li>Auditoría de activos críticos.</li>
-            <li>Análisis de fallas recurrentes.</li>
-            <li>Levantamiento de línea base de confiabilidad.</li>
-          </ul>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--vt-space-4);">
+            <div>
+              <p>Antes de ejecutar grandes inversiones, realizamos una inmersión táctica en tu planta. Evaluamos el estado de tus activos críticos y tus procesos de mantenimiento actuales para descubrir exactamente dónde se oculta la rentabilidad perdida.</p>
+              <p><strong>Estructura del Proyecto:</strong></p>
+              <ul style="list-style-type: none; padding-left: 0; color: var(--vt-secondary);">
+                <li style="margin-bottom: 8px;"><i data-lucide="check-circle" style="color: var(--vt-primary); width: 16px; height: 16px; vertical-align: middle; margin-right: 8px;"></i> <strong>Análisis de Brechas:</strong> Comparativa contra estándares internacionales.</li>
+                <li style="margin-bottom: 8px;"><i data-lucide="check-circle" style="color: var(--vt-primary); width: 16px; height: 16px; vertical-align: middle; margin-right: 8px;"></i> <strong>Matriz de Criticidad:</strong> Identificación de equipos cuello de botella.</li>
+                <li style="margin-bottom: 8px;"><i data-lucide="check-circle" style="color: var(--vt-primary); width: 16px; height: 16px; vertical-align: middle; margin-right: 8px;"></i> <strong>Plan de Quick Wins:</strong> Acciones correctivas inmediatas para el primer mes.</li>
+              </ul>
+            </div>
+            <div style="background: var(--vt-background); padding: var(--vt-space-4); border-radius: var(--vt-radius-md); border-left: 4px solid var(--vt-primary);">
+              <h4 style="margin-top: 0;">Enfoque Económico y de Inversión</h4>
+              <p style="font-size: 0.95rem;">Un proyecto corto (Fee Fijo) diseñado para pagarse solo. Cuantificamos en moneda local el costo de la indisponibilidad actual y entregamos un esquema accionable que recupera el flujo de caja mediante victorias tempranas de alta rentabilidad.</p>
+              <a href="contacto.html" class="btn btn-primary" style="margin-top: var(--vt-space-3); display: inline-block;">Solicitar Propuesta Comercial</a>
+            </div>
+          </div>
         </div>
 
-        <!-- Servicio 2 -->
-        <div class="animate-on-scroll fade-in-up delay-300" style="background: var(--vt-surface-card); padding: var(--vt-space-4); border-radius: var(--vt-radius-lg); box-shadow: var(--vt-shadow-md); display: flex; flex-direction: column;">
-          <div style="color: var(--vt-teal); margin-bottom: var(--vt-space-2);">
-            <i data-lucide="trending-up" style="width: 32px; height: 32px;"></i>
+        <!-- Servicio 2: Mejora -->
+        <div class="animate-on-scroll fade-in-up delay-100" style="background: var(--vt-surface-card); padding: var(--vt-space-6); border-radius: var(--vt-radius-lg); box-shadow: var(--vt-shadow-lg); display: flex; flex-direction: column; gap: var(--vt-space-4); margin-bottom: var(--vt-space-6);">
+          <div style="display: flex; align-items: center; gap: var(--vt-space-3); border-bottom: 1px solid var(--vt-border); padding-bottom: var(--vt-space-3);">
+            <div style="background: rgba(0, 163, 163, 0.1); padding: 16px; border-radius: 50%; color: var(--vt-teal);">
+              <i data-lucide="trending-up" style="width: 40px; height: 40px;"></i>
+            </div>
+            <div>
+              <h2 style="color: var(--vt-teal); margin-bottom: 0;">Propuesta de Mejora de Procesos</h2>
+              <p style="color: var(--vt-secondary); margin-bottom: 0; font-weight: 500;">Implementación técnica (3 a 6 meses) basada en ROI.</p>
+            </div>
           </div>
-          <h3 style="color: var(--vt-teal);">Propuesta de Mejora de Procesos</h3>
-          <p style="flex-grow: 1;">Diseñamos estrategias accionables para optimizar el ciclo de vida de los activos. Pasamos del análisis a la acción implementando metodologías predictivas y preventivas que reducen costos y tiempos de inactividad.</p>
-          <ul style="list-style-type: disc; padding-left: 20px; color: var(--vt-secondary); margin-bottom: var(--vt-space-3);">
-            <li>Diseño de planes de mantenimiento.</li>
-            <li>Optimización de inventarios MRO.</li>
-            <li>Integración de tecnologías predictivas.</li>
-          </ul>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--vt-space-4);">
+            <div>
+              <p>Pasamos del papel a la acción. Diseñamos e implementamos metodologías predictivas y preventivas personalizadas para erradicar las fallas crónicas que destruyen la capacidad de producción y elevan las horas extra operativas.</p>
+              <p><strong>Estructura del Proyecto:</strong></p>
+              <ul style="list-style-type: none; padding-left: 0; color: var(--vt-secondary);">
+                <li style="margin-bottom: 8px;"><i data-lucide="check-circle" style="color: var(--vt-teal); width: 16px; height: 16px; vertical-align: middle; margin-right: 8px;"></i> <strong>Planes de Mantenimiento:</strong> Basados en la norma EN 13306.</li>
+                <li style="margin-bottom: 8px;"><i data-lucide="check-circle" style="color: var(--vt-teal); width: 16px; height: 16px; vertical-align: middle; margin-right: 8px;"></i> <strong>Gestión MRO:</strong> Optimización matemática de inventarios y repuestos.</li>
+                <li style="margin-bottom: 8px;"><i data-lucide="check-circle" style="color: var(--vt-teal); width: 16px; height: 16px; vertical-align: middle; margin-right: 8px;"></i> <strong>Ingeniería Predictiva:</strong> Transición hacia el monitoreo de condición (CBM).</li>
+              </ul>
+            </div>
+            <div style="background: var(--vt-background); padding: var(--vt-space-4); border-radius: var(--vt-radius-md); border-left: 4px solid var(--vt-teal);">
+              <h4 style="margin-top: 0;">Enfoque Económico y de Inversión</h4>
+              <p style="font-size: 0.95rem;">El Costo de Ciclo de Vida (LCC) como indicador maestro. Nuestro esquema de trabajo vincula la inversión en nuestros honorarios directamente a la reducción del Costo de Mantenimiento por Unidad Producida (CMUP), asegurando un retorno de la inversión documentado mes a mes.</p>
+              <a href="contacto.html" class="btn btn-secondary" style="margin-top: var(--vt-space-3); display: inline-block;">Agendar Sesión de Mejora</a>
+            </div>
+          </div>
         </div>
 
-        <!-- Servicio 3 -->
-        <div class="animate-on-scroll fade-in-up delay-500" style="background: var(--vt-surface-card); padding: var(--vt-space-4); border-radius: var(--vt-radius-lg); box-shadow: var(--vt-shadow-md); display: flex; flex-direction: column;">
-          <div style="color: var(--vt-accent); margin-bottom: var(--vt-space-2);">
-            <i data-lucide="bar-chart-2" style="width: 32px; height: 32px;"></i>
+        <!-- Servicio 3: Estrategia -->
+        <div class="animate-on-scroll fade-in-up delay-200" style="background: var(--vt-surface-card); padding: var(--vt-space-6); border-radius: var(--vt-radius-lg); box-shadow: var(--vt-shadow-lg); display: flex; flex-direction: column; gap: var(--vt-space-4);">
+          <div style="display: flex; align-items: center; gap: var(--vt-space-3); border-bottom: 1px solid var(--vt-border); padding-bottom: var(--vt-space-3);">
+            <div style="background: rgba(255, 107, 0, 0.1); padding: 16px; border-radius: 50%; color: var(--vt-accent);">
+              <i data-lucide="shield" style="width: 40px; height: 40px;"></i>
+            </div>
+            <div>
+              <h2 style="color: var(--vt-accent); margin-bottom: 0;">Mejoramiento Estratégico Integral</h2>
+              <p style="color: var(--vt-secondary); margin-bottom: 0; font-weight: 500;">Transformación corporativa a largo plazo (6 a 12 meses).</p>
+            </div>
           </div>
-          <h3 style="color: var(--vt-accent);">Mejoramiento Estratégico</h3>
-          <p style="flex-grow: 1;">Consultoría a largo plazo para alinear la realidad técnica con los objetivos financieros. Establecemos KPIs de alto nivel y transformamos la cultura organizacional hacia la excelencia operativa y normativa.</p>
-          <ul style="list-style-type: disc; padding-left: 20px; color: var(--vt-secondary); margin-bottom: var(--vt-space-3);">
-            <li>Alineación financiera-operativa.</li>
-            <li>Implementación de normativas ISO (55001).</li>
-            <li>Transformación cultural y capacitaciones.</li>
-          </ul>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--vt-space-4);">
+            <div>
+              <p>Nuestra consultoría integral de élite (High-Ticket). Preparamos a tu compañía para la excelencia sostenida estableciendo un puente irrompible entre la gerencia general (finanzas) y la base técnica operativa, cimentado bajo la normativa internacional ISO 55001.</p>
+              <p><strong>Estructura del Proyecto:</strong></p>
+              <ul style="list-style-type: none; padding-left: 0; color: var(--vt-secondary);">
+                <li style="margin-bottom: 8px;"><i data-lucide="check-circle" style="color: var(--vt-accent); width: 16px; height: 16px; vertical-align: middle; margin-right: 8px;"></i> <strong>Implementación Normativa:</strong> Alineación hacia certificación ISO 55001.</li>
+                <li style="margin-bottom: 8px;"><i data-lucide="check-circle" style="color: var(--vt-accent); width: 16px; height: 16px; vertical-align: middle; margin-right: 8px;"></i> <strong>Plan Estratégico (SAMP):</strong> Diseño del Strategic Asset Management Plan.</li>
+                <li style="margin-bottom: 8px;"><i data-lucide="check-circle" style="color: var(--vt-accent); width: 16px; height: 16px; vertical-align: middle; margin-right: 8px;"></i> <strong>Transformación Cultural:</strong> Gestión del cambio (MoC) a todos los niveles.</li>
+              </ul>
+            </div>
+            <div style="background: var(--vt-background); padding: var(--vt-space-4); border-radius: var(--vt-radius-md); border-left: 4px solid var(--vt-accent);">
+              <h4 style="margin-top: 0;">Enfoque Económico y de Inversión</h4>
+              <p style="font-size: 0.95rem;">Impacto directo en la Valoración de la Empresa (EBITDA). Un modelo de madurez superior no solo optimiza el CAPEX/OPEX, sino que disminuye drásticamente los riesgos operacionales (multas, accidentes, seguros) convirtiendo al departamento de mantenimiento en un pilar financiero del negocio.</p>
+              <a href="contacto.html" class="btn btn-primary" style="margin-top: var(--vt-space-3); display: inline-block;">Postular Empresa</a>
+            </div>
+          </div>
         </div>
 
       </div>
