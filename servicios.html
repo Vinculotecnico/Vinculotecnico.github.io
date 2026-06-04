@@ -77,7 +77,7 @@
             <div style="background: rgba(255, 255, 255, 0.5); padding: var(--vt-space-4); border-radius: var(--vt-radius-md); border-left: 4px solid var(--vt-primary);">
               <h4 style="margin-top: 0;">Enfoque Económico y de Inversión</h4>
               <p style="font-size: 0.95rem;">Un proyecto corto (Fee Fijo) diseñado para pagarse solo. Cuantificamos en moneda local el costo de la indisponibilidad actual y entregamos un esquema accionable que recupera el flujo de caja mediante victorias tempranas de alta rentabilidad.</p>
-              <a href="contacto.html" class="btn btn-primary" style="margin-top: var(--vt-space-3); display: inline-block;">Solicitar Propuesta Comercial</a>
+              <button onclick="openModal('Diagnóstico Integral Operativo')" class="btn btn-primary" style="margin-top: var(--vt-space-3); display: inline-block; cursor: pointer; border: none; font-family: inherit; font-size: inherit;">Solicitar Propuesta Comercial</button>
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@
             <div style="background: rgba(255, 255, 255, 0.5); padding: var(--vt-space-4); border-radius: var(--vt-radius-md); border-left: 4px solid var(--vt-primary);">
               <h4 style="margin-top: 0;">Enfoque Económico y de Inversión</h4>
               <p style="font-size: 0.95rem;">El Costo de Ciclo de Vida (LCC) como indicador maestro. Nuestro esquema de trabajo vincula la inversión en nuestros honorarios directamente a la reducción del Costo de Mantenimiento por Unidad Producida (CMUP), asegurando un retorno de la inversión documentado mes a mes.</p>
-              <a href="contacto.html" class="btn btn-secondary" style="margin-top: var(--vt-space-3); display: inline-block;">Agendar Sesión de Mejora</a>
+              <button onclick="openModal('Propuesta de Mejora de Procesos')" class="btn btn-primary" style="margin-top: var(--vt-space-3); display: inline-block; cursor: pointer; border: none; font-family: inherit; font-size: inherit;">Agendar Sesión de Mejora</button>
             </div>
           </div>
         </div>
@@ -135,13 +135,60 @@
             <div style="background: rgba(255, 255, 255, 0.5); padding: var(--vt-space-4); border-radius: var(--vt-radius-md); border-left: 4px solid var(--vt-primary);">
               <h4 style="margin-top: 0;">Enfoque Económico y de Inversión</h4>
               <p style="font-size: 0.95rem;">Impacto directo en la Valoración de la Empresa (EBITDA). Un modelo de madurez superior no solo optimiza el CAPEX/OPEX, sino que disminuye drásticamente los riesgos operacionales (multas, accidentes, seguros) convirtiendo al departamento de mantenimiento en un pilar financiero del negocio.</p>
-              <a href="contacto.html" class="btn btn-primary" style="margin-top: var(--vt-space-3); display: inline-block;">Postular Empresa</a>
+              <button onclick="openModal('Mejoramiento Estratégico Integral')" class="btn btn-primary" style="margin-top: var(--vt-space-3); display: inline-block; cursor: pointer; border: none; font-family: inherit; font-size: inherit;">Solicitar Asesoría Estratégica</button>
             </div>
           </div>
         </div>
 
       </div>
     </section>
+
+    <!-- Modal Formulario -->
+    <div id="serviceModal" class="modal-overlay" style="display: none;">
+      <div class="modal-content glass-card">
+        <span class="close-modal" onclick="closeModal()"><i data-lucide="x"></i></span>
+        <h3 id="modalTitle" style="color: var(--vt-primary); margin-top: 0;">Solicitud de Servicio</h3>
+        <p style="font-size: 0.9rem; color: var(--vt-secondary); margin-bottom: var(--vt-space-4);">Por favor, completa los datos a continuación. Te redirigiremos a tu cliente de correo para enviar la solicitud.</p>
+        
+        <form id="leadForm" onsubmit="submitForm(event)">
+          <input type="hidden" id="serviceType" name="serviceType" value="">
+          
+          <div style="margin-bottom: var(--vt-space-3);">
+            <label style="display: block; font-weight: bold; margin-bottom: 4px; font-size: 0.9rem;">Nombre Completo *</label>
+            <input type="text" id="leadName" required style="width: 100%; padding: 10px; border: 1px solid var(--vt-border); border-radius: 4px; font-family: inherit;">
+          </div>
+          
+          <div style="margin-bottom: var(--vt-space-3);">
+            <label style="display: block; font-weight: bold; margin-bottom: 4px; font-size: 0.9rem;">Empresa *</label>
+            <input type="text" id="leadCompany" required style="width: 100%; padding: 10px; border: 1px solid var(--vt-border); border-radius: 4px; font-family: inherit;">
+          </div>
+          
+          <div style="display: flex; gap: var(--vt-space-3); margin-bottom: var(--vt-space-3);">
+            <div style="flex: 1;">
+              <label style="display: block; font-weight: bold; margin-bottom: 4px; font-size: 0.9rem;">Cargo *</label>
+              <input type="text" id="leadRole" required style="width: 100%; padding: 10px; border: 1px solid var(--vt-border); border-radius: 4px; font-family: inherit;">
+            </div>
+            <div style="flex: 1;">
+              <label style="display: block; font-weight: bold; margin-bottom: 4px; font-size: 0.9rem;">Ciudad / País *</label>
+              <input type="text" id="leadLocation" required style="width: 100%; padding: 10px; border: 1px solid var(--vt-border); border-radius: 4px; font-family: inherit;">
+            </div>
+          </div>
+          
+          <div style="margin-bottom: var(--vt-space-3);">
+            <label style="display: block; font-weight: bold; margin-bottom: 4px; font-size: 0.9rem;">Correo Corporativo *</label>
+            <input type="email" id="leadEmail" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="ejemplo@tuempresa.com" style="width: 100%; padding: 10px; border: 1px solid var(--vt-border); border-radius: 4px; font-family: inherit;">
+          </div>
+          
+          <div style="margin-bottom: var(--vt-space-4);">
+            <label style="display: block; font-weight: bold; margin-bottom: 4px; font-size: 0.9rem;">Breve contexto o necesidad *</label>
+            <textarea id="leadMessage" required rows="3" style="width: 100%; padding: 10px; border: 1px solid var(--vt-border); border-radius: 4px; font-family: inherit; resize: vertical;"></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%; cursor: pointer; border: none; font-family: inherit; font-size: inherit;">Generar Solicitud de Contacto</button>
+        </form>
+      </div>
+    </div>
+
   </main>
 
   <!-- FOOTER -->
@@ -173,8 +220,8 @@
       </div>
       <div class="footer-contact">
         <h4>Contacto</h4>
-        <p><i data-lucide="building" style="width:16px;height:16px;vertical-align:middle;margin-right:8px;"></i> Sede Principal: Medellín</p>
-        <p><i data-lucide="map-pin" style="width:16px;height:16px;vertical-align:middle;margin-right:8px;"></i> Representación Comercial: Manizales</p>
+        <p><i data-lucide="building" style="width:16px;height:16px;vertical-align:middle;margin-right:8px;"></i> Sede Medellín</p>
+        <p><i data-lucide="building" style="width:16px;height:16px;vertical-align:middle;margin-right:8px;"></i> Sede Manizales</p>
         <p><i data-lucide="mail" style="width:16px;height:16px;vertical-align:middle;margin-right:8px;"></i> vinculotecnico@gmail.com</p>
       </div>
     </div>
@@ -186,7 +233,101 @@
     </div>
   </footer>
 
+  <style>
+    /* Modal CSS */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(5, 38, 59, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      backdrop-filter: blur(4px);
+    }
+    .modal-content {
+      background: white;
+      padding: var(--vt-space-6);
+      border-radius: var(--vt-radius-lg);
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .close-modal {
+      position: absolute;
+      top: var(--vt-space-4);
+      right: var(--vt-space-4);
+      cursor: pointer;
+      color: var(--vt-secondary);
+    }
+    .close-modal:hover {
+      color: var(--vt-primary);
+    }
+  </style>
   <script type="module" src="assets/js/app.js"></script>
-  <script>lucide.createIcons();</script>
+  <script>
+    lucide.createIcons();
+
+    // Modal Logic
+    function openModal(serviceName) {
+      document.getElementById('serviceType').value = serviceName;
+      document.getElementById('modalTitle').innerText = 'Solicitud: ' + serviceName;
+      document.getElementById('serviceModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('serviceModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close on click outside
+    document.getElementById('serviceModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    function submitForm(e) {
+      e.preventDefault();
+      
+      const service = document.getElementById('serviceType').value;
+      const name = document.getElementById('leadName').value;
+      const company = document.getElementById('leadCompany').value;
+      const role = document.getElementById('leadRole').value;
+      const location = document.getElementById('leadLocation').value;
+      const email = document.getElementById('leadEmail').value;
+      const message = document.getElementById('leadMessage').value;
+
+      // Subject
+      const subject = encodeURIComponent(`Solicitud B2B: ${service} - ${company}`);
+      
+      // Body
+      const bodyText = `Hola equipo de Vínculo Técnico,
+
+Deseo información o agendar una sesión respecto a: ${service}
+
+Mis Datos:
+- Nombre: ${name}
+- Cargo: ${role}
+- Empresa: ${company}
+- Ciudad/País: ${location}
+- Correo: ${email}
+
+Mensaje / Contexto:
+${message}
+
+Quedo atento a sus comentarios.
+`;
+      const body = encodeURIComponent(bodyText);
+
+      // Trigger mailto
+      window.location.href = `mailto:vinculotecnico@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Close modal after submission
+      closeModal();
+      document.getElementById('leadForm').reset();
+    }
+  </script>
 </body>
 </html>
