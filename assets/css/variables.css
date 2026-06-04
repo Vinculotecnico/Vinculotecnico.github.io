@@ -1,30 +1,30 @@
 :root {
-  /* Colores Primarios */
-  --vt-primary: #0A3D62;
-  --vt-secondary: #2C3E50;
+  /* Colores Primarios - Executive Navy Theme */
+  --vt-primary: #05263B;
+  --vt-secondary: #1F3044;
 
-  /* Color de Acento */
-  --vt-accent: #D4A03C;
+  /* Color de Acento - Corporate Gold/Amber */
+  --vt-accent: #E58E26;
 
   /* Colores de Soporte */
-  --vt-teal: #1A7A7A;
+  --vt-teal: #0D696B;
   --vt-gray: #7F8C8D;
 
   /* Neutros */
-  --vt-light: #ECF0F1;
+  --vt-light: #F4F7F6;
   --vt-base: #F8F9FA;
-  --vt-dark: #1B1F23;
+  --vt-dark: #12181E;
   --vt-white: #FFFFFF;
 
   /* Estados Hover */
-  --vt-primary-hover: #0D4F7E;
-  --vt-accent-hover: #E0AD4A;
-  --vt-teal-hover: #1F8F8F;
+  --vt-primary-hover: #083857;
+  --vt-accent-hover: #F2A444;
+  --vt-teal-hover: #128B8D;
 
   /* Estados Active */
-  --vt-primary-active: #073050;
-  --vt-accent-active: #B8892F;
-  --vt-teal-active: #156666;
+  --vt-primary-active: #031521;
+  --vt-accent-active: #CC7B1D;
+  --vt-teal-active: #094B4C;
 
   /* Semánticos */
   --vt-success: #27AE60;
@@ -32,17 +32,25 @@
   --vt-error: #E74C3C;
   --vt-info: #3498DB;
 
-  /* Superficies */
+  /* Superficies Normales */
   --vt-surface-card: #FFFFFF;
   --vt-surface-alt: #ECF0F1;
   --vt-border: #DDE1E3;
   --vt-separator: #E8ECEE;
 
+  /* Glassmorphism Variables */
+  --vt-glass-bg: rgba(255, 255, 255, 0.85);
+  --vt-glass-border: rgba(255, 255, 255, 0.4);
+  --vt-glass-blur: blur(12px);
+
+  --vt-glass-dark-bg: rgba(5, 38, 59, 0.7);
+  --vt-glass-dark-border: rgba(255, 255, 255, 0.1);
+
   /* Superficies Modo Oscuro */
-  --vt-dark-surface: #242A31;
-  --vt-dark-surface-alt: #2C3340;
-  --vt-dark-border: #3A4149;
-  --vt-dark-separator: #333A42;
+  --vt-dark-surface: #1B242E;
+  --vt-dark-surface-alt: #24303D;
+  --vt-dark-border: #2C3A4A;
+  --vt-dark-separator: #24303D;
 
   /* Sombras */
   --vt-shadow-sm: 0 2px 8px rgba(27, 31, 35, 0.08);

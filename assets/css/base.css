@@ -90,3 +90,27 @@ a:hover {
 .bg-gradient-primary {
   background: linear-gradient(135deg, var(--vt-primary), var(--vt-primary-hover));
 }
+
+/* Glassmorphism Utilities */
+.glass-card {
+  background: var(--vt-glass-bg);
+  backdrop-filter: var(--vt-glass-blur);
+  -webkit-backdrop-filter: var(--vt-glass-blur);
+  border: 1px solid var(--vt-glass-border);
+  box-shadow: var(--vt-shadow-md);
+  border-radius: var(--vt-radius-lg);
+  transition: var(--vt-transition-smooth);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--vt-shadow-lg);
+  border-color: var(--vt-primary);
+}
+
+.glass-dark {
+  background: var(--vt-glass-dark-bg);
+  backdrop-filter: var(--vt-glass-blur);
+  -webkit-backdrop-filter: var(--vt-glass-blur);
+  border: 1px solid var(--vt-glass-dark-border);
+}
