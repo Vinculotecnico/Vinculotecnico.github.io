@@ -1,0 +1,59 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--vt-font-primary);
+  font-weight: 600; /* SemiBold */
+  font-size: 16px;
+  padding: 12px 28px;
+  border-radius: var(--vt-radius-md); /* 6px */
+  cursor: pointer;
+  transition: var(--vt-transition-base);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--vt-accent);
+  color: var(--vt-dark);
+}
+
+.btn-primary:hover {
+  background-color: var(--vt-accent-hover);
+  color: var(--vt-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 160, 60, 0.3);
+}
+
+.btn-primary:active {
+  background-color: var(--vt-accent-active);
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--vt-primary);
+  border-color: var(--vt-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--vt-primary);
+  color: var(--vt-white);
+}
+
+.btn-secondary:active {
+  background-color: var(--vt-primary-active);
+  border-color: var(--vt-primary-active);
+}
+
+/* For dark backgrounds */
+.section-dark .btn-secondary {
+  color: var(--vt-white);
+  border-color: var(--vt-white);
+}
+
+.section-dark .btn-secondary:hover {
+  background-color: var(--vt-white);
+  color: var(--vt-primary);
+}

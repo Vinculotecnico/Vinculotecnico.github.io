@@ -1,0 +1,79 @@
+:root {
+  /* Colores Primarios */
+  --vt-primary: #0A3D62;
+  --vt-secondary: #2C3E50;
+
+  /* Color de Acento */
+  --vt-accent: #D4A03C;
+
+  /* Colores de Soporte */
+  --vt-teal: #1A7A7A;
+  --vt-gray: #7F8C8D;
+
+  /* Neutros */
+  --vt-light: #ECF0F1;
+  --vt-base: #F8F9FA;
+  --vt-dark: #1B1F23;
+  --vt-white: #FFFFFF;
+
+  /* Estados Hover */
+  --vt-primary-hover: #0D4F7E;
+  --vt-accent-hover: #E0AD4A;
+  --vt-teal-hover: #1F8F8F;
+
+  /* Estados Active */
+  --vt-primary-active: #073050;
+  --vt-accent-active: #B8892F;
+  --vt-teal-active: #156666;
+
+  /* Semánticos */
+  --vt-success: #27AE60;
+  --vt-warning: #F39C12;
+  --vt-error: #E74C3C;
+  --vt-info: #3498DB;
+
+  /* Superficies */
+  --vt-surface-card: #FFFFFF;
+  --vt-surface-alt: #ECF0F1;
+  --vt-border: #DDE1E3;
+  --vt-separator: #E8ECEE;
+
+  /* Superficies Modo Oscuro */
+  --vt-dark-surface: #242A31;
+  --vt-dark-surface-alt: #2C3340;
+  --vt-dark-border: #3A4149;
+  --vt-dark-separator: #333A42;
+
+  /* Sombras */
+  --vt-shadow-sm: 0 2px 8px rgba(27, 31, 35, 0.08);
+  --vt-shadow-md: 0 4px 16px rgba(27, 31, 35, 0.10);
+  --vt-shadow-lg: 0 8px 24px rgba(27, 31, 35, 0.12);
+
+  /* Tipografía */
+  --vt-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --vt-font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+  /* Espaciado */
+  --vt-space-1: 8px;
+  --vt-space-2: 16px;
+  --vt-space-3: 24px;
+  --vt-space-4: 32px;
+  --vt-space-6: 48px;
+  --vt-space-8: 64px;
+  --vt-space-12: 96px;
+
+  /* Border Radius */
+  --vt-radius-sm: 4px;
+  --vt-radius-md: 6px;
+  --vt-radius-lg: 8px;
+  --vt-radius-xl: 12px;
+
+  /* Transiciones */
+  --vt-transition-fast: all 0.15s ease;
+  --vt-transition-base: all 0.2s ease;
+  --vt-transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Layout */
+  --vt-max-width: 1200px;
+  --vt-max-width-section: 1440px;
+}

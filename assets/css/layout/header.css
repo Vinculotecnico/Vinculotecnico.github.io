@@ -1,0 +1,116 @@
+.site-header {
+  background-color: var(--vt-white);
+  box-shadow: var(--vt-shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: var(--vt-space-2) 0;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-symbol {
+  color: var(--vt-primary);
+  margin-right: 12px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text-vinculo {
+  font-family: var(--vt-font-primary);
+  font-weight: 800; /* ExtraBold */
+  font-size: 20px;
+  color: var(--vt-primary);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.logo-text-tecnico {
+  font-family: var(--vt-font-primary);
+  font-weight: 500; /* Medium */
+  font-size: 20px;
+  color: var(--vt-primary);
+  line-height: 1;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: var(--vt-space-4);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  color: var(--vt-secondary);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.main-nav a:hover {
+  color: var(--vt-primary-hover);
+}
+
+.main-nav .nav-cta {
+  background-color: var(--vt-accent);
+  color: var(--vt-dark);
+  padding: 10px 24px;
+  border-radius: var(--vt-radius-md);
+  font-weight: 600;
+}
+
+.main-nav .nav-cta:hover {
+  background-color: var(--vt-accent-hover);
+  color: var(--vt-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 160, 60, 0.3);
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--vt-primary);
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none; /* Hide by default on mobile, JS will toggle */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--vt-white);
+    box-shadow: var(--vt-shadow-md);
+    padding: var(--vt-space-3);
+  }
+
+  .main-nav.is-open {
+    display: block;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: var(--vt-space-3);
+    align-items: flex-start;
+  }
+}
