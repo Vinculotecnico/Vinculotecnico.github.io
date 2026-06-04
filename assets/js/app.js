@@ -1,5 +1,6 @@
 import { Logger } from './core/Logger.js';
 import { Header } from './components/Header.js';
+import { Animator } from './core/Animator.js';
 
 /**
  * Main Application class
@@ -15,6 +16,9 @@ class App {
     
     // Initialize components if they exist on the current page
     this.initComponents();
+    
+    // Initialize scroll animations
+    this.animator = new Animator();
     
     Logger.info('App initialization complete.');
   }

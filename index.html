@@ -49,14 +49,93 @@
   <!-- MAIN CONTENT -->
   <main>
     <!-- HERO SECTION -->
-    <section class="section section-dark text-center bg-gradient-primary">
-      <div class="container">
-        <h1>Transformamos el caos operativo en datos de decisión</h1>
-        <p>Consultoría de activos basada en estándares de confiabilidad para asegurar la rentabilidad del ciclo de vida.</p>
-        <div style="margin-top: var(--vt-space-4); display: flex; gap: var(--vt-space-2); justify-content: center;">
+    <section class="section section-dark text-center bg-animated-gradient" style="min-height: 80vh; display: flex; align-items: center; position: relative; overflow: hidden;">
+      <div class="container animate-on-scroll fade-in-up" style="position: relative; z-index: 2;">
+        <h1 style="font-size: 3.5rem; margin-bottom: var(--vt-space-3);">Transformamos el caos operativo en datos de decisión</h1>
+        <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto; color: var(--vt-light);" class="animate-on-scroll fade-in-up delay-200">Consultoría de activos basada en estándares de confiabilidad para asegurar la rentabilidad del ciclo de vida.</p>
+        <div style="margin-top: var(--vt-space-6); display: flex; gap: var(--vt-space-3); justify-content: center;" class="animate-on-scroll fade-in-up delay-400">
           <a href="servicios.html" class="btn btn-primary">Conoce nuestros servicios</a>
           <a href="contacto.html" class="btn btn-secondary">Hablemos</a>
         </div>
+      </div>
+      <!-- Background floating decoration -->
+      <svg class="float" style="position: absolute; top: 10%; left: 5%; opacity: 0.1; width: 150px; height: 150px; color: var(--vt-white);" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 8 L16 26 L26 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="float delay-300" style="position: absolute; bottom: 15%; right: 10%; opacity: 0.1; width: 200px; height: 200px; color: var(--vt-accent);" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/></svg>
+    </section>
+
+    <!-- POR QUÉ ELEGIRNOS -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="text-center animate-on-scroll fade-in-up" style="margin-bottom: var(--vt-space-8);">
+          <h2>Por qué elegir Vínculo Técnico</h2>
+          <p style="margin: 0 auto;">Nuestra promesa es simple: resultados medibles y rentabilidad garantizada.</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--vt-space-4);">
+          <!-- Pilar 1 -->
+          <div class="animate-on-scroll fade-in-up delay-100" style="background: var(--vt-surface-card); padding: var(--vt-space-4); border-radius: var(--vt-radius-lg); text-align: center; box-shadow: var(--vt-shadow-sm);">
+            <div style="color: var(--vt-primary); margin-bottom: var(--vt-space-2); display: flex; justify-content: center;">
+              <i data-lucide="bar-chart-2" style="width: 48px; height: 48px;"></i>
+            </div>
+            <h3>Decisiones Basadas en Datos</h3>
+            <p>Dejamos de lado la intuición. Utilizamos analítica predictiva para optimizar el ciclo de vida de tus activos.</p>
+          </div>
+          <!-- Pilar 2 -->
+          <div class="animate-on-scroll fade-in-up delay-300" style="background: var(--vt-surface-card); padding: var(--vt-space-4); border-radius: var(--vt-radius-lg); text-align: center; box-shadow: var(--vt-shadow-sm);">
+            <div style="color: var(--vt-teal); margin-bottom: var(--vt-space-2); display: flex; justify-content: center;">
+              <i data-lucide="shield-check" style="width: 48px; height: 48px;"></i>
+            </div>
+            <h3>Excelencia Normativa</h3>
+            <p>Implementamos frameworks probados globalmente (como ISO 55001) para garantizar cumplimiento y calidad.</p>
+          </div>
+          <!-- Pilar 3 -->
+          <div class="animate-on-scroll fade-in-up delay-500" style="background: var(--vt-surface-card); padding: var(--vt-space-4); border-radius: var(--vt-radius-lg); text-align: center; box-shadow: var(--vt-shadow-sm);">
+            <div style="color: var(--vt-accent); margin-bottom: var(--vt-space-2); display: flex; justify-content: center;">
+              <i data-lucide="trending-up" style="width: 48px; height: 48px;"></i>
+            </div>
+            <h3>Rentabilidad Asegurada</h3>
+            <p>Conectamos las operaciones técnicas directamente con la estrategia financiera de la organización.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUMEN DE SERVICIOS -->
+    <section class="section">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: var(--vt-space-6);">
+          <div class="animate-on-scroll fade-in-up">
+            <h2>Nuestras Soluciones</h2>
+            <p>Consultoría especializada para la industria moderna.</p>
+          </div>
+          <div class="animate-on-scroll fade-in-up delay-200">
+            <a href="servicios.html" class="btn btn-secondary">Ver todos los servicios <i data-lucide="arrow-right" style="margin-left: 8px; width: 18px; height: 18px;"></i></a>
+          </div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--vt-space-4);">
+          <div class="animate-on-scroll fade-in-up delay-100" style="border: 1px solid var(--vt-border); padding: var(--vt-space-4); border-radius: var(--vt-radius-lg); transition: var(--vt-transition-base);">
+            <h4 style="color: var(--vt-primary);">Diagnóstico de Procesos</h4>
+            <p>Levantamiento de línea base y auditoría de activos críticos.</p>
+          </div>
+          <div class="animate-on-scroll fade-in-up delay-200" style="border: 1px solid var(--vt-border); padding: var(--vt-space-4); border-radius: var(--vt-radius-lg); transition: var(--vt-transition-base);">
+            <h4 style="color: var(--vt-teal);">Mejora Continua</h4>
+            <p>Diseño e implementación de estrategias preventivas y predictivas.</p>
+          </div>
+          <div class="animate-on-scroll fade-in-up delay-300" style="border: 1px solid var(--vt-border); padding: var(--vt-space-4); border-radius: var(--vt-radius-lg); transition: var(--vt-transition-base);">
+            <h4 style="color: var(--vt-accent);">Consultoría Estratégica</h4>
+            <p>Alineación financiera-operativa e implementación normativa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-dark text-center" style="background-color: var(--vt-primary-active);">
+      <div class="container animate-on-scroll fade-in-up">
+        <h2>¿Listo para optimizar tu planta?</h2>
+        <p style="margin-bottom: var(--vt-space-4); color: var(--vt-light);">Agenda una sesión inicial para evaluar el potencial de mejora de tus activos.</p>
+        <a href="contacto.html" class="btn btn-primary">Contáctanos hoy</a>
       </div>
     </section>
   </main>
