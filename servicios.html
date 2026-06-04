@@ -288,8 +288,13 @@
       if (e.target === this) closeModal();
     });
 
-    function submitForm(e) {
+    async function submitForm(e) {
       e.preventDefault();
+      
+      const submitBtn = document.querySelector('#leadForm button[type="submit"]');
+      const originalText = submitBtn.innerText;
+      submitBtn.innerText = 'Enviando...';
+      submitBtn.disabled = true;
       
       const service = document.getElementById('serviceType').value;
       const name = document.getElementById('leadName').value;
@@ -299,34 +304,42 @@
       const email = document.getElementById('leadEmail').value;
       const message = document.getElementById('leadMessage').value;
 
-      // Subject
-      const subject = encodeURIComponent(`Solicitud B2B: ${service} - ${company}`);
-      
-      // Body
-      const bodyText = `Hola equipo de Vínculo Técnico,
+      const payload = {
+          _subject: `Solicitud B2B: ${service} - ${company}`,
+          _replyto: email,
+          "Servicio Solicitado": service,
+          "Nombre": name,
+          "Empresa": company,
+          "Cargo": role,
+          "Ciudad/País": location,
+          "Correo Corporativo": email,
+          "Contexto/Mensaje": message
+      };
 
-Deseo información o agendar una sesión respecto a: ${service}
-
-Mis Datos:
-- Nombre: ${name}
-- Cargo: ${role}
-- Empresa: ${company}
-- Ciudad/País: ${location}
-- Correo: ${email}
-
-Mensaje / Contexto:
-${message}
-
-Quedo atento a sus comentarios.
-`;
-      const body = encodeURIComponent(bodyText);
-
-      // Trigger mailto
-      window.location.href = `mailto:vinculotecnico@gmail.com?subject=${subject}&body=${body}`;
-      
-      // Close modal after submission
-      closeModal();
-      document.getElementById('leadForm').reset();
+      try {
+          // Usamos FormSubmit con AJAX para envío en background sin abrir gestor de correo local
+          const response = await fetch("https://formsubmit.co/ajax/vinculotecnico@gmail.com", {
+              method: "POST",
+              headers: { 
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+              },
+              body: JSON.stringify(payload)
+          });
+          
+          if (response.ok) {
+              alert('Solicitud enviada exitosamente. Nos pondremos en contacto muy pronto.');
+              closeModal();
+              document.getElementById('leadForm').reset();
+          } else {
+              alert('Hubo un error al enviar el formulario. Por favor inténtalo más tarde.');
+          }
+      } catch (error) {
+          alert('Hubo un error de conexión al enviar el formulario.');
+      } finally {
+          submitBtn.innerText = originalText;
+          submitBtn.disabled = false;
+      }
     }
   </script>
 </body>
