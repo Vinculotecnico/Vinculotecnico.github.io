@@ -5,6 +5,6 @@
 @import 'reset.css';
 @import 'base.css';
 @import 'components/button.css';
-@import 'layout/header.css';
+@import 'layout/header.css?v=2';
 @import 'layout/footer.css';
 @import 'animations.css';
