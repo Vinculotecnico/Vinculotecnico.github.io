@@ -107,6 +107,29 @@
       font-family: var(--vt-font-mono);
       font-weight: bold;
       border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .iso-tag:hover, .iso-tag.active {
+      background: var(--vt-primary-hover);
+      color: var(--vt-white);
+      transform: translateY(-2px);
+      border-color: var(--vt-accent);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    #norm-info-box {
+      margin-top: var(--vt-space-4);
+      padding: var(--vt-space-3);
+      border-left: 4px solid var(--vt-accent);
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: var(--vt-radius-md);
+      display: none;
+      text-align: left;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -227,16 +250,21 @@
           <p style="color: var(--vt-light); margin-bottom: var(--vt-space-4); max-width: 100%; font-size: 1.1rem;">
             Ingeniería sin lugar a la intuición. Este modelo reposa sobre el rigor más estricto.
           </p>
-          <div>
-            <span class="iso-tag">ISO 55001</span>
-            <span class="iso-tag">ISO 14224</span>
-            <span class="iso-tag">ISO 13381</span>
-            <span class="iso-tag">ISO 17359</span>
-            <span class="iso-tag">EN 13306</span>
-            <span class="iso-tag">EN 17007</span>
-            <span class="iso-tag">IEC 60812</span>
-            <span class="iso-tag">IEC 61025</span>
-            <span class="iso-tag">SAE JA1011/12</span>
+          <div id="iso-tags-container">
+            <span class="iso-tag" data-title="ISO 55001" data-desc="Sistema de Gestión de Activos. Establece los requisitos macro para gestionar el ciclo de vida de los activos y alinear las operaciones con los objetivos financieros y el modelo de negocio.">ISO 55001</span>
+            <span class="iso-tag" data-title="ISO 14224" data-desc="Recolección e intercambio de datos de confiabilidad y mantenimiento. Es el estándar maestro para estructurar la taxonomía de los equipos en tu CMMS/GMAO y asegurar datos útiles.">ISO 14224</span>
+            <span class="iso-tag" data-title="ISO 13381" data-desc="Diagnóstico y pronóstico del estado de las máquinas. Base fundamental para el mantenimiento predictivo avanzado y la predicción de fallas futuras.">ISO 13381</span>
+            <span class="iso-tag" data-title="ISO 17359" data-desc="Monitoreo de condición y diagnóstico. Provee las directrices generales para establecer programas de monitoreo de condición efectivos en la planta.">ISO 17359</span>
+            <span class="iso-tag" data-title="EN 13306" data-desc="Terminología de mantenimiento. Define el vocabulario técnico estándar y unifica la medición de KPIs (como MTBF y MTTR) para evitar ambigüedades.">EN 13306</span>
+            <span class="iso-tag" data-title="EN 17007" data-desc="Proceso de mantenimiento e indicadores. Estandariza el flujo de trabajo (Workflow) del mantenimiento desde la planificación hasta la ejecución.">EN 17007</span>
+            <span class="iso-tag" data-title="IEC 60812" data-desc="Análisis de Modos de Falla y Efectos (FMEA / FMECA). Metodología indispensable para identificar cómo y por qué fallan los sistemas y evaluar su criticidad.">IEC 60812</span>
+            <span class="iso-tag" data-title="IEC 61025" data-desc="Análisis de Árbol de Fallas (FTA). Herramienta analítica deductiva crucial para el Análisis de Causa Raíz (RCA) tras eventos críticos.">IEC 61025</span>
+            <span class="iso-tag" data-title="SAE JA1011/12" data-desc="Mantenimiento Centrado en Confiabilidad (RCM). Criterios oficiales para evaluar procesos de optimización de tácticas de mantenimiento y garantizar la función del activo.">SAE JA1011/12</span>
+          </div>
+          
+          <div id="norm-info-box">
+            <h4 id="norm-title" style="color: var(--vt-accent); margin-bottom: 8px;">Título Norma</h4>
+            <p id="norm-desc" style="color: var(--vt-light); margin-bottom: 0; font-size: 0.95rem;">Descripción de la norma.</p>
           </div>
         </div>
 
@@ -302,6 +330,29 @@
   <script type="module" src="assets/js/app.js"></script>
   <script>
     lucide.createIcons();
+    
+    // Funcionalidad dinámica para las normas
+    const tags = document.querySelectorAll('.iso-tag');
+    const infoBox = document.getElementById('norm-info-box');
+    const titleEl = document.getElementById('norm-title');
+    const descEl = document.getElementById('norm-desc');
+
+    tags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        // Remover activo de todos
+        tags.forEach(t => t.classList.remove('active'));
+        
+        // Activar el actual
+        tag.classList.add('active');
+        
+        // Actualizar datos
+        titleEl.textContent = tag.getAttribute('data-title');
+        descEl.textContent = tag.getAttribute('data-desc');
+        
+        // Mostrar caja
+        infoBox.style.display = 'block';
+      });
+    });
   </script>
 </body>
 </html>
