@@ -340,18 +340,21 @@
 
     tags.forEach(tag => {
       tag.addEventListener('click', () => {
+        const isActive = tag.classList.contains('active');
+        
         // Remover activo de todos
         tags.forEach(t => t.classList.remove('active'));
         
-        // Activar el actual
-        tag.classList.add('active');
-        
-        // Actualizar datos
-        titleEl.textContent = tag.getAttribute('data-title');
-        descEl.textContent = tag.getAttribute('data-desc');
-        
-        // Mostrar caja
-        infoBox.style.display = 'block';
+        if (isActive) {
+          // Si ya estaba activo, cerrar la caja
+          infoBox.style.display = 'none';
+        } else {
+          // Si no estaba activo, activarlo y mostrar info
+          tag.classList.add('active');
+          titleEl.textContent = tag.getAttribute('data-title');
+          descEl.textContent = tag.getAttribute('data-desc');
+          infoBox.style.display = 'block';
+        }
       });
     });
   </script>
