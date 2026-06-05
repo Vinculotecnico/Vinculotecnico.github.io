@@ -4,7 +4,7 @@
 @import 'variables.css';
 @import 'reset.css';
 @import 'base.css';
-@import 'components/button.css';
+@import 'components/button.css?v=2';
 @import 'layout/header.css?v=2';
 @import 'layout/footer.css';
 @import 'animations.css';
