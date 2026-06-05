@@ -58,10 +58,65 @@
   color: var(--vt-secondary);
   font-weight: 500;
   font-size: 16px;
+  position: relative;
 }
 
 .main-nav a:hover {
   color: var(--vt-primary-hover);
+}
+
+/* Tooltips Desktop */
+@media (min-width: 993px) {
+  .main-nav a[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: var(--vt-primary);
+    color: var(--vt-white);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    width: 220px;
+    white-space: normal;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    z-index: 1001;
+    font-weight: 400;
+    line-height: 1.4;
+    box-shadow: var(--vt-shadow-md);
+  }
+
+  .main-nav a[data-tooltip]::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(0px);
+    border: 6px solid transparent;
+    border-bottom-color: var(--vt-primary);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    z-index: 1001;
+  }
+
+  .main-nav a[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(8px);
+  }
+  
+  .main-nav a[data-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-4px);
+  }
 }
 
 .main-nav .nav-cta {
