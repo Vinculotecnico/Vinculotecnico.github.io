@@ -75,7 +75,7 @@ a:hover {
   color: var(--vt-white);
 }
 
-.section-dark h2, .section-dark h3 {
+.section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4, .section-dark h5, .section-dark h6 {
   color: var(--vt-white);
 }
 
@@ -113,4 +113,20 @@ a:hover {
   backdrop-filter: var(--vt-glass-blur);
   -webkit-backdrop-filter: var(--vt-glass-blur);
   border: 1px solid var(--vt-glass-dark-border);
+}
+
+/* Responsive Typography and Spacing */
+@media (max-width: 768px) {
+  h1 { font-size: 2.25rem; } /* 36px */
+  h2 { font-size: 1.75rem; } /* 28px */
+  h3 { font-size: 1.5rem; }  /* 24px */
+  h4 { font-size: 1.25rem; } /* 20px */
+  
+  .section {
+    padding: var(--vt-space-6) 0;
+  }
+  
+  .glass-card, .glass-dark {
+    padding: var(--vt-space-4) !important;
+  }
 }
