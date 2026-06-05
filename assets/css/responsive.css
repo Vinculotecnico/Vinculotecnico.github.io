@@ -1,0 +1,281 @@
+/* ==========================================================
+   RESPONSIVE.CSS — Mobile-First Responsive System
+   Vínculo Técnico 2026
+   
+   Estrategia: Base = móvil (320px+), luego escalamos hacia arriba.
+   Breakpoints:
+     - Base:   0–479px   (teléfonos pequeños)
+     - sm:     480px+    (teléfonos grandes / landscape)
+     - md:     768px+    (tablets)
+     - lg:     992px+    (laptops)
+     - xl:     1200px+   (desktop)
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   1. OVERFLOW GUARD — prevenir scroll horizontal global
+   ---------------------------------------------------------- */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ----------------------------------------------------------
+   2. TIPOGRAFÍA MOBILE-FIRST
+   Base (móvil): tamaños compactos que SIEMPRE caben.
+   Se escalan hacia arriba con min-width media queries.
+   ---------------------------------------------------------- */
+
+/* Base móvil (ya definido en base.css, lo sobreescribimos
+   para el rango más pequeño con clamp()) */
+h1 {
+  font-size: clamp(1.5rem, 5vw + 0.5rem, 3rem);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+h2 {
+  font-size: clamp(1.35rem, 4vw + 0.4rem, 2.25rem);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+h3 {
+  font-size: clamp(1.15rem, 3vw + 0.3rem, 1.75rem);
+}
+
+h4 {
+  font-size: clamp(1.05rem, 2.5vw + 0.25rem, 1.375rem);
+}
+
+p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ----------------------------------------------------------
+   3. CONTAINER — padding móvil compacto
+   ---------------------------------------------------------- */
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+  max-width: 100%;
+}
+
+@media (min-width: 480px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--vt-space-4);
+    padding-right: var(--vt-space-4);
+    max-width: var(--vt-max-width);
+  }
+}
+
+/* ----------------------------------------------------------
+   4. HERO SECTION — mobile-first
+   Sobreescribir los estilos inline del hero con !important
+   solo en rangos móviles para que el texto siempre quepa.
+   ---------------------------------------------------------- */
+
+/* El h1 del hero usa font-size: 3.5rem inline; forzar override */
+@media (max-width: 767px) {
+  .section.section-dark.text-center h1 {
+    font-size: clamp(1.4rem, 6vw, 2.2rem) !important;
+    max-width: 100% !important;
+    padding: 0 8px;
+  }
+
+  .section.section-dark.text-center p {
+    font-size: 0.95rem !important;
+    max-width: 100% !important;
+    padding: 0 4px;
+  }
+
+  /* Glass-dark: que no use inline-block, use block para respetar width */
+  .glass-dark {
+    display: block !important;
+    padding: var(--vt-space-3) !important;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Botones del hero: apilarlos verticalmente en móvil */
+  .section.section-dark .container > .glass-dark > div[style*="display: flex"][style*="gap"] {
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+  }
+
+  /* Todos los botones en el hero: full-width en móvil */
+  .section.section-dark .btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablet: intermedio */
+@media (min-width: 768px) and (max-width: 991px) {
+  .section.section-dark.text-center h1 {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* Desktop: se puede usar el tamaño original */
+@media (min-width: 992px) {
+  .section.section-dark.text-center h1 {
+    font-size: 3.2rem !important;
+  }
+}
+
+/* ----------------------------------------------------------
+   5. GRIDS — mobile-first con minmax seguro
+   Los grids de servicios, pilares, etc. usan minmax(280-300px, 1fr)
+   en inline styles. Los forzamos a 1 columna en móvil.
+   ---------------------------------------------------------- */
+@media (max-width: 599px) {
+  /* Todos los grids con inline grid-template-columns: forzar 1 col */
+  div[style*="grid-template-columns"][style*="minmax"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Las tarjetas de servicio (servicios.html): reducir padding */
+  .glass-card {
+    padding: var(--vt-space-3) !important;
+  }
+
+  /* Los headers de servicio (icono + titulo): apilar si es necesario */
+  .glass-card > div[style*="display: flex"][style*="align-items: center"] {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 12px !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 991px) {
+  div[style*="grid-template-columns"][style*="minmax(300px"] {
+    grid-template-columns: 1fr !important;
+  }
+  div[style*="grid-template-columns"][style*="minmax(280px"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ----------------------------------------------------------
+   6. SERVICIOS — cuadros con border-left y contenido interno
+   ---------------------------------------------------------- */
+@media (max-width: 599px) {
+  /* Cuadro de Enfoque Económico */
+  div[style*="border-left: 4px solid"] {
+    padding: 16px !important;
+  }
+  
+  div[style*="border-left: 4px solid"] p {
+    font-size: 0.9rem;
+  }
+
+  /* Formulario modal: campos en columna */
+  .modal-content {
+    padding: var(--vt-space-3) !important;
+  }
+
+  div[style*="display: flex"][style*="gap"][style*="margin-bottom"] {
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+}
+
+/* ----------------------------------------------------------
+   7. SECCIÓN MODELO SOCIOTÉCNICO (index.html) 
+   ---------------------------------------------------------- */
+@media (max-width: 767px) {
+  .section.section-dark.bg-gradient-primary p {
+    font-size: 1rem !important;
+    padding: 0 8px;
+  }
+
+  .section.section-dark.bg-gradient-primary .btn {
+    font-size: 0.9rem;
+    padding: 12px 20px;
+  }
+}
+
+/* ----------------------------------------------------------
+   8. CTA SECTION (final de index.html)
+   ---------------------------------------------------------- */
+@media (max-width: 767px) {
+  .section.section-dark[style*="background-color"] h2 {
+    font-size: 1.5rem;
+  }
+
+  .section.section-dark[style*="background-color"] p {
+    font-size: 0.95rem;
+    padding: 0 8px;
+  }
+}
+
+/* ----------------------------------------------------------
+   9. NUESTRAS SOLUCIONES — flex header
+   ---------------------------------------------------------- */
+@media (max-width: 599px) {
+  .section.section-alt > .container > div[style*="display: flex"][style*="flex-wrap: wrap"] {
+    flex-direction: column !important;
+    gap: 16px !important;
+    text-align: center;
+  }
+}
+
+/* ----------------------------------------------------------
+   10. FOOTER — responsive
+   ---------------------------------------------------------- */
+@media (max-width: 599px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: var(--vt-space-4) !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 8px;
+  }
+}
+
+/* ----------------------------------------------------------
+   11. SECCIÓN "POR QUÉ ELEGIRNOS" — cards
+   ---------------------------------------------------------- */
+@media (max-width: 479px) {
+  .glass-card[style*="text-align: center"] h3 {
+    font-size: 1.15rem;
+  }
+  
+  .glass-card[style*="text-align: center"] p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ----------------------------------------------------------
+   12. GENERAL — texto que se sale
+   ---------------------------------------------------------- */
+* {
+  max-width: 100%;
+}
+
+/* Excepciones para elementos que necesitan desbordarse */
+svg, .logo-symbol, [data-lucide], .float {
+  max-width: none;
+}
+
+/* Inputs no deben desbordar su contenedor */
+input, textarea, select {
+  max-width: 100%;
+  box-sizing: border-box;
+}
