@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo de Negocio | Vínculo Técnico</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Timeline Infographic Styles */
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: var(--vt-space-4) 0;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: var(--vt-primary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+      border-radius: 4px;
+    }
+    .timeline-container {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    .timeline-container.left { left: 0; }
+    .timeline-container.right { left: 50%; }
+
+    /* The connecting circles/icons */
+    .timeline-icon {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      right: -24px;
+      background-color: var(--vt-white);
+      border: 4px solid var(--vt-primary);
+      top: 32px;
+      border-radius: 50%;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--vt-primary);
+    }
+    .right .timeline-icon {
+      left: -24px;
+    }
+
+    /* Content Box */
+    .timeline-content {
+      padding: var(--vt-space-4);
+      border-top: 4px solid var(--vt-accent);
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+      .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      .timeline-container.right {
+        left: 0%;
+      }
+      .timeline-icon {
+        left: 7px;
+        right: auto;
+      }
+      .right .timeline-icon {
+        left: 7px;
+      }
+    }
+
+    /* Foundations */
+    .foundations-block {
+      background: var(--vt-dark);
+      color: var(--vt-white);
+      padding: var(--vt-space-6) var(--vt-space-4);
+      border-radius: var(--vt-radius-lg);
+      margin-top: var(--vt-space-4);
+      text-align: center;
+      border-top: 6px solid var(--vt-teal);
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+    }
+    .iso-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      padding: 8px 16px;
+      border-radius: 20px;
+      margin: 8px;
+      font-family: var(--vt-font-mono);
+      font-weight: bold;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo-container">
+        <svg class="logo-symbol" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 8 L16 26 L26 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="6" cy="8" r="2" fill="currentColor"/>
+          <circle cx="26" cy="8" r="2" fill="currentColor"/>
+          <circle cx="16" cy="26" r="3" fill="currentColor"/>
+          <path d="M16 8 L16 16" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+        <div class="logo-text">
+          <span class="logo-text-vinculo">VÍNCULO</span>
+          <span class="logo-text-tecnico">TÉCNICO</span>
+        </div>
+      </a>
+
+      <button class="mobile-menu-toggle" aria-expanded="false" aria-label="Abrir menú">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="modelo.html" class="active" style="color: var(--vt-primary); font-weight: 700;">Modelo</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="contacto.html" class="btn btn-primary">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="section section-dark bg-gradient-primary text-center">
+      <div class="container animate-on-scroll fade-in-up">
+        <h1>Nuestro Modelo de Negocio</h1>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: var(--vt-light);">
+          Abordamos la gestión de activos como un <strong>sistema sociotécnico</strong>. Conectamos la estrategia financiera de la alta gerencia directamente con la ejecución técnica en la base de la planta.
+        </p>
+      </div>
+    </section>
+
+    <!-- INFOGRAPHIC SECTION -->
+    <section class="section section-alt" style="overflow: hidden;">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--vt-space-4);">
+          <h2 style="color: var(--vt-primary);">Flujo de Valor y Confiabilidad</h2>
+          <p>Desde la rentabilidad del negocio hasta el dato puro en planta.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Pilar 1 -->
+          <div class="timeline-container left animate-on-scroll fade-in-up">
+            <div class="timeline-icon">
+              <i data-lucide="briefcase"></i>
+            </div>
+            <div class="timeline-content glass-card">
+              <h3 style="color: var(--vt-primary);">1. Gestión del Negocio</h3>
+              <p>Alineamos la confiabilidad operativa con los objetivos financieros globales (EBITDA, ROI, LCC). Toda decisión técnica se justifica mediante un caso de negocio sólido y mitigación directa del riesgo corporativo.</p>
+            </div>
+          </div>
+          
+          <!-- Pilar 2 -->
+          <div class="timeline-container right animate-on-scroll fade-in-up delay-100">
+            <div class="timeline-icon" style="border-color: var(--vt-teal); color: var(--vt-teal);">
+              <i data-lucide="activity"></i>
+            </div>
+            <div class="timeline-content glass-card" style="border-top-color: var(--vt-teal);">
+              <h3 style="color: var(--vt-teal);">2. Confiabilidad del Proceso</h3>
+              <p>Aseguramos que los parámetros reales de operación y manufactura no destruyan la salud inherente del activo. Unificamos operaciones y mantenimiento bajo una misma meta de calidad y volumen sostenibles.</p>
+            </div>
+          </div>
+
+          <!-- Pilar 3 -->
+          <div class="timeline-container left animate-on-scroll fade-in-up delay-200">
+            <div class="timeline-icon" style="border-color: var(--vt-accent); color: var(--vt-accent);">
+              <i data-lucide="settings"></i>
+            </div>
+            <div class="timeline-content glass-card" style="border-top-color: var(--vt-primary);">
+              <h3 style="color: var(--vt-primary);">3. Confiabilidad del Equipo</h3>
+              <p>Mitigamos y eliminamos fallas físicas. Implementamos tácticas de precisión, rediseños técnicos y un robusto ecosistema de mantenimiento predictivo enfocado en monitoreo de condición e ingeniería.</p>
+            </div>
+          </div>
+
+          <!-- Pilar 4 -->
+          <div class="timeline-container right animate-on-scroll fade-in-up delay-300">
+            <div class="timeline-icon" style="border-color: var(--vt-primary); color: var(--vt-primary);">
+              <i data-lucide="users"></i>
+            </div>
+            <div class="timeline-content glass-card">
+              <h3 style="color: var(--vt-primary);">4. Organización y Liderazgo</h3>
+              <p>La tecnología sin personas es inútil. Desarrollamos activamente las competencias técnicas del talento humano, estructuramos perfiles y forjamos una cultura de confiabilidad inquebrantable a todos los niveles.</p>
+            </div>
+          </div>
+
+          <!-- Pilar 5 -->
+          <div class="timeline-container left animate-on-scroll fade-in-up delay-400">
+            <div class="timeline-icon" style="border-color: var(--vt-teal); color: var(--vt-teal);">
+              <i data-lucide="database"></i>
+            </div>
+            <div class="timeline-content glass-card" style="border-top-color: var(--vt-teal);">
+              <h3 style="color: var(--vt-teal);">5. Trabajo y Datos</h3>
+              <p>El terreno de juego. Garantizamos una planificación experta, programación milimétrica y ejecución táctica perfecta. Esto asegura calidad estadística en la retroalimentación de los datos en tu sistema CMMS/GMAO.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOUNDATION (Cimientos) -->
+        <div class="foundations-block animate-on-scroll fade-in-up delay-500">
+          <h2 style="color: var(--vt-white); margin-bottom: 8px;">Cimientos Normativos Internacionales</h2>
+          <p style="color: var(--vt-light); margin-bottom: var(--vt-space-4); max-width: 100%; font-size: 1.1rem;">
+            Ingeniería sin lugar a la intuición. Este modelo reposa sobre el rigor más estricto.
+          </p>
+          <div>
+            <span class="iso-tag">ISO 55001</span>
+            <span class="iso-tag">ISO 14224</span>
+            <span class="iso-tag">ISO 13381</span>
+            <span class="iso-tag">ISO 17359</span>
+            <span class="iso-tag">EN 13306</span>
+            <span class="iso-tag">EN 17007</span>
+            <span class="iso-tag">IEC 60812</span>
+            <span class="iso-tag">IEC 61025</span>
+            <span class="iso-tag">SAE JA1011/12</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section text-center" style="background-color: var(--vt-base);">
+      <div class="container animate-on-scroll fade-in-up">
+        <h2>Implementa este Modelo en tu Empresa</h2>
+        <p style="margin-bottom: var(--vt-space-4);">Elige el nivel de acompañamiento adecuado para tus necesidades actuales.</p>
+        <a href="servicios.html" class="btn btn-primary">Ver Portafolio de Servicios</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo-container" style="margin-bottom: var(--vt-space-2);">
+          <svg class="logo-symbol" width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 8 L16 26 L26 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="6" cy="8" r="2" fill="currentColor"/>
+            <circle cx="26" cy="8" r="2" fill="currentColor"/>
+            <circle cx="16" cy="26" r="3" fill="currentColor"/>
+            <path d="M16 8 L16 16" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+          </svg>
+          <div class="logo-text">
+            <span class="logo-text-vinculo">VÍNCULO</span>
+            <span class="logo-text-tecnico">TÉCNICO</span>
+          </div>
+        </div>
+        <p class="footer-tagline">Consultoría de activos basada en estándares de confiabilidad para asegurar la rentabilidad del ciclo de vida.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Compañía</h4>
+        <ul>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="modelo.html">Modelo</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p><i data-lucide="building" style="width:16px;height:16px;vertical-align:middle;margin-right:8px;"></i> Sede Medellín</p>
+        <p><i data-lucide="building" style="width:16px;height:16px;vertical-align:middle;margin-right:8px;"></i> Sede Manizales</p>
+        <p><i data-lucide="mail" style="width:16px;height:16px;vertical-align:middle;margin-right:8px;"></i> vinculotecnico@gmail.com</p>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Vínculo Técnico. Todos los derechos reservados.</p>
+      <div style="display:flex; gap:16px;">
+        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="assets/js/app.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
